@@ -54,20 +54,6 @@ void ExibirAtletas(tAtleta **vetorAtletas, int numAtletas){
     }
 }
 
-void ExibirAtletasOrdenado(tAtleta **vetorAtletas, int numAtletas){
-    int horas = 0, minutos = 0;
-    
-    for (int i = 0; i<numAtletas ; i++){
-        horas = 0;
-        minutos = 0;
-        
-        horario(vetorAtletas[i]->tempo, &horas, &minutos);
-        
-        printf("\n\nCódigo: %d | Nome: %s | Tempo: %d:%d\n",
-            vetorAtletas[i]->codigo, vetorAtletas[i]->nome, horas, minutos);
-    }
-}
-
 void OrdenarRanking(tAtleta **vetorAtletas, int numAtletas){
     tAtleta *temp;
     int ultimaTroca;

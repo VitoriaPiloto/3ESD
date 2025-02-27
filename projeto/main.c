@@ -30,7 +30,7 @@ int main() {
             case 3:
                 printf("\nAtletas ordenados por nome:\n");
                 OrdenarPorNome(vAtletas, &vOrdenado, numAtletas);
-                ExibirAtletasOrdenado(vOrdenado, numAtletas);
+                ExibirAtletas(vOrdenado, numAtletas);
                 break;
             case 4:
                 printf("\nRanking por tempo de treino:\n");
