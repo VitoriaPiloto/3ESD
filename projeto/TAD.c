@@ -54,12 +54,13 @@ void ExibirAtletas(tAtleta **vetorAtletas, int numAtletas){
     }
 }
 
-void OrdenarRanking(tAtleta **vetorAtletas, int numAtletas){
+void OrdenarRanking(tAtleta **vetorAtletas, tAtleta ***vRanking, int numAtletas){
     tAtleta *temp;
     int ultimaTroca;
+
     for (int i = numAtletas - 1 ; i > 0; i = ultimaTroca) {
         ultimaTroca = 0;
-        for (int j = 0; j < numAtletas ; j++) {
+        for (int j = 0; j < i ; j++) {
             if (vetorAtletas[j]->tempo > vetorAtletas[j + 1]->tempo) {
                 temp = vetorAtletas[j];
                 vetorAtletas[j] = vetorAtletas[j + 1];
@@ -68,6 +69,8 @@ void OrdenarRanking(tAtleta **vetorAtletas, int numAtletas){
             }
         }
     }
+
+    *vRanking = vetorAtletas;
 }
 
 void ExibirRanking(tAtleta **vetorAtletas, int numAtletas){
@@ -80,14 +83,15 @@ void ExibirRanking(tAtleta **vetorAtletas, int numAtletas){
         
         horario(vetorAtletas[i]->tempo, &horas, &minutos);
         
-        printf("\n\n%dº Lugar: \n NOME: %s \n TEMPO: %d:%d",
-               i + 1, vetorAtletas[i]->nome, horas, minutos);
+        printf("\n\n%dº Lugar: \n NOME: %s \n MATRICULA: %d \n TEMPO: %d:%d",
+               i + 1, vetorAtletas[i]->nome, vetorAtletas[i]->codigo, horas, minutos);
     }
 }
 
 void OrdenarPorNome(tAtleta **vAtletas, tAtleta ***vOrdenado, int numAtletas){
     tAtleta *temp;
     int ultimaTroca = 0;
+
     *vOrdenado = (tAtleta**)malloc(numAtletas * sizeof(char*));
     for (int i = numAtletas - 1; i > 0; i = ultimaTroca) {
         ultimaTroca = 0;

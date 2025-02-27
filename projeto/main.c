@@ -8,7 +8,7 @@ int main() {
     int numAtletas = 0, opcao, limite;
     tAtleta **vAtletas = NULL;
     tAtleta **vOrdenado = NULL;
-    
+    tAtleta **vRanking = NULL;
     do {
         exibirMenu();
         scanf("%d", &opcao);
@@ -34,7 +34,7 @@ int main() {
                 break;
             case 4:
                 printf("\nRanking por tempo de treino:\n");
-                OrdenarRanking(vAtletas, numAtletas);
+                OrdenarRanking(vAtletas, &vRanking, numAtletas);
                 ExibirRanking(vAtletas, numAtletas);
                 break;
             case 5:
