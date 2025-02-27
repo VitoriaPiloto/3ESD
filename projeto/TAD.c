@@ -107,7 +107,7 @@ void OrdenarPorNome(tAtleta **vAtletas, tAtleta ***vOrdenado, int numAtletas){
         ultimaTroca = 0;
         for (int j = 0; j < i; j++) {
             if (strcmp(vAtletas[j]->nome, vAtletas[j+1]->nome) > 0 || 
-                (strcmp(vAtletas[j]->nome, vAtletas[j+1]->nome) == 0 && vAtletas[i]->codigo > vAtletas[j]->codigo)) {
+                (strcmp(vAtletas[j]->nome, vAtletas[j+1]->nome) == 0 && vAtletas[j]->codigo > vAtletas[j+1]->codigo)) {
                     temp = vAtletas[j];
                     vAtletas[j] = vAtletas[j+1];
                     vAtletas[j+1] = temp;
