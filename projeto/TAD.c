@@ -109,14 +109,21 @@ void OrdenarPorNome(tAtleta **vAtletas, tAtleta ***vOrdenado, int numAtletas){
     *vOrdenado = vAtletas;
 }
 
-void FiltrarAtletas(tAtleta **vAtletas, int numAtletas, int limite){
+void FiltrarAtletas(tAtleta **vAtletas, tAtleta ***vPiores, int numAtletas, int limite){
+    int horas, minutos;
+
     printf("\nAtletas com tempo superior a %d minutos:\n", limite);
     for (int i = 0; i < numAtletas; i++) {
         if (vAtletas[i]->tempo > limite) {
-            int horas, minutos;
+            horas = 0;
+            minutos = 0;
+
             horario(vAtletas[i]->tempo, &horas, &minutos);
+            
             printf("Código: %d | Nome: %s | Tempo: %02d:%02d\n", 
                    vAtletas[i]->codigo, vAtletas[i]->nome, horas, minutos);
         }
     }
+
+    *vPiores = vAtletas;
 }

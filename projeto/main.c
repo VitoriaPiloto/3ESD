@@ -9,6 +9,8 @@ int main() {
     tAtleta **vAtletas = NULL;
     tAtleta **vOrdenado = NULL;
     tAtleta **vRanking = NULL;
+    tAtleta **vPiores = NULL;
+
     do {
         exibirMenu();
         scanf("%d", &opcao);
@@ -38,9 +40,9 @@ int main() {
                 ExibirRanking(vAtletas, numAtletas);
                 break;
             case 5:
-                printf("\nDigite um tempo limite para filtrar atletas: ");
+                printf("\nDigite um tempo limite para filtrar atletas (em minutos): ");
                 scanf("%d", &limite);
-                FiltrarAtletas(vAtletas, numAtletas, limite);
+                FiltrarAtletas(vAtletas, &vPiores, numAtletas, limite);
                 break;
             case 6:
                 printf("Saindo...\n");
