@@ -29,7 +29,8 @@ void bol_libera(tBoleto* p){
 }
 
 void bol_acessa(tBoleto* p, int* n, float* val, tData* dtVenc){
+    int dia, mes, ano;
     *n = p->n;
     *val = p->valor;
-    dta_acessa(p->dt, 2, 11, 2002);
+    //*dtVenc = p->dt;
 }
